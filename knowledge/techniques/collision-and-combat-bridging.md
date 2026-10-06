@@ -57,7 +57,7 @@ Physical blocking, AI navigation and visual removal are three separate outcomes;
   kinematic so a collision gap can't fling it. A two-second timeout then lets movement continue, so this
   reduces rather than removes the problem.
 - **Budget rebuilds.** Some rebuilt-engine projects watch cars within a radius, rebuild only after a set
-  distance of movement, at most once a second, and skips identical triangle batches by an FNV-1a hash
+  distance of movement, at most once a second, and skip identical triangle batches by an FNV-1a hash
   (identical order only; not geometric equivalence).
 - **Mark moving regions dirty.** The Half-Life bridge unions a moving brush's old and new regions and cancels
   stale worker jobs with an epoch, but flushes only when the worker is idle.

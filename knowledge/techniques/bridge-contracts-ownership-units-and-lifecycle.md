@@ -63,8 +63,8 @@ transplanted subsystem behind a C API, or a worker process. See `choosing-a-mash
 ### Byte order and layout
 [GalaxyCraft](https://github.com/M0uidev/GalaxyCraft)'s host protocol is little-endian (version 10) while the emulated PowerPC mailbox is big-endian
 (version 5); many display-list/model payloads are already big-endian and must not be swapped again. A shared
-C assertion file pins offsets, region lengths and struct sizes. Do the same: a compile-time layout
-test on both sides is cheap insurance.
+C assertion file pins offsets, region lengths and struct sizes. Add the same kind of compile-time layout
+test on both sides.
 
 ## Gotchas
 1. **Matching magic, different meaning.** **Symptom:** a bridge built for one host half-works on another.

@@ -24,7 +24,7 @@ Present/swapchain hook on the host and a capture in the guest.
 ### The transport is a CPU copy
 Every bridge here reads guest pixels back from the GPU, copies them into shared memory (named Windows
 memory, or a file-backed mapping that both a native JVM and a Wine/CrossOver process can map), then uploads
-them into host textures. It is not GPU texture sharing. Budget for it:
+them into host textures. Budget for that copy:
 - **Triple slots, double readback.** The CrossOver writers use two alternating PBO sets and three mapped
   frame slots, and throttle capture to host-frame progress.
 - **Cap the size.** NewVegasCraft scales the requested guest resolution to a 1920×1080 pixel budget; the GTA
@@ -52,7 +52,7 @@ shadows. If the user needs that, the route is geometry transfer ([SkyCraft](http
 Skyrim's renderer and samples native lights and sun-shadow cascades).
 
 ### Build the diagnostic tools first
-NewVegasCraft is the model: one key cycles composite / host depth / guest depth / difference views; one drops
+NewVegasCraft has the fullest set: one key cycles composite / host depth / guest depth / difference views; one drops
 a 1×1×2 marker pillar where the native crosshair ray hits; one dumps the native projection matrix and pose; a
 capture burst saves frames at a fixed host-frame interval; a pose ring exposes lag 0/1/2. A fake host that
 compares each exported frame with the pose recorded for it catches misalignment before the real game is in

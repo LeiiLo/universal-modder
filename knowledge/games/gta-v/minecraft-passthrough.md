@@ -213,8 +213,7 @@ game finished installing.
 - **Enhanced edition:** GTA V Enhanced (DX12) needs a different ReShade/compositor path.
 - **Multiplayer Minecraft:** it works in principle, since it's just another client. It's untested.
 - **Latency:** Minecraft could render at the predicted pose, so re-projection is only a fallback.
-- **Verify before relying on it.** Worth checking with a
-  real install before relying on the example; see also
+- **Check these with a real install before relying on the example.** See also
   `knowledge/techniques/frame-compositing-depth-and-pose-sync.md`.
   - **Pose lag:** the gotcha above says a lag of 1 frame, but the compositor defaults to 0 (a code comment
     says 0 measured best) and only the director's `poselag` op changes it. Record the value used per capture.

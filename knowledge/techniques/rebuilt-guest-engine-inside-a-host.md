@@ -50,7 +50,7 @@ rebuilt engine already used, and picks button labels separately. The engine's in
 Note its precedence rule: any connected XInput pad wins over SDL.
 
 ### Check against the original where you can
-The Diablo II movement mod compares its tables with a user-supplied Diablo II 1.12 `D2Common.dll` and the
+The Diablo II movement mod compares its tables with a user-supplied Diablo II 1.12 `D2Common.dll` and
 an MIT-licensed reimplementation, keeps a probe/report harness, and falls back to stock tile walking when
 continuous movement stalls. Faith Runner reads behavioural parameters from extracted UnrealScript and
 Ghidra-inspected native code. Missing owned files skip those checks, so record when a run skipped them.

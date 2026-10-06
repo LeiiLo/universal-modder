@@ -12,8 +12,7 @@ links: []
 
 > When an agent reads up on existing mods (or writes up its own), the same sentence, "X works", can
 > rest on a creator's video, a README, code that was read, a test that passed, or a real play session. Keep
-> those apart in notes and in what you tell the user. The lessons below are about recording evidence, not
-> about any one game.
+> those apart in notes and in what you tell the user.
 
 ## When to use it
 - Researching existing projects before choosing a route (`um kb search`, READMEs, commit pages, repos).

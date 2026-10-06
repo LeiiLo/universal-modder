@@ -11,7 +11,7 @@ links: ["https://github.com/chasmlol/SkyCraft", "https://github.com/mrborghini/l
 # Choosing a mashup route: seven ways to put a game inside a game
 
 > "Minecraft in X" covers at least seven architectures that look the same in a clip. Pick the route from
-> what the user actually wants (real guest behaviour, or only its look or one mechanic), who owns the
+> what the user wants (real guest behaviour, or only its look or one mechanic), who owns the
 > player, and what each player must own.
 
 ## When to use it
@@ -85,7 +85,7 @@ bridges shared one creator, magic number and layout.
    different routes. **Fix:** name the route in `MODLOG.md` and in the field note's `route:` and tags.
 3. **Running the whole second game for one mechanic.** **Cause:** defaulting to passthrough. **Fix:** a
    transplant (Faith Runner needs only box sweeps and overlap queries from its host) or pattern 5 is often
-   smaller and more robust. For a full mechanic set (skating), a rebuilt engine in the host is the
+   smaller and less fragile. For a full mechanic set (skating), a rebuilt engine in the host is the
    pattern; see `rebuilt-guest-engine-inside-a-host.md`.
 4. **Treating shared rules as the original games.** **Cause:** a neutral simulation runs its own physics.
    **Fix:** list per viewer what is native (appearance) and what is shared (movement, hits).
