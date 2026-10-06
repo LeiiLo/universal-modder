@@ -52,7 +52,7 @@ shadows. If the user needs that, the route is geometry transfer ([SkyCraft](http
 Skyrim's renderer and samples native lights and sun-shadow cascades).
 
 ### Build the diagnostic tools first
-NewVegasCraft has the fullest set: one key cycles composite / host depth / guest depth / difference views; one drops
+NewVegasCraft is the model: one key cycles composite / host depth / guest depth / difference views; one drops
 a 1×1×2 marker pillar where the native crosshair ray hits; one dumps the native projection matrix and pose; a
 capture burst saves frames at a fixed host-frame interval; a pose ring exposes lag 0/1/2. A fake host that
 compares each exported frame with the pose recorded for it catches misalignment before the real game is in
