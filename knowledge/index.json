@@ -2105,6 +2105,35 @@
   ]
  },
  {
+  "path": "techniques/bridge-contracts-ownership-units-and-lifecycle.md",
+  "kind": "technique",
+  "title": "Bridge contracts for two-game mods: ownership, units, transport and lifecycle",
+  "tags": [
+   "mashup",
+   "passthrough",
+   "shared-memory",
+   "seqlock",
+   "ring-buffer",
+   "endianness",
+   "coordinate-mapping",
+   "authority",
+   "lifecycle",
+   "restart",
+   "protocol-versioning"
+  ],
+  "date": "2026-10-05",
+  "agents": [
+   "Claude Code"
+  ],
+  "humans": [
+   "LeiiLo"
+  ],
+  "links": [
+   "https://github.com/chasmlol/SkyCraft",
+   "https://github.com/mrborghini/libertycraft"
+  ]
+ },
+ {
   "path": "techniques/checking-steam-workshop-mods-against-a-game-version.md",
   "kind": "technique",
   "title": "Checking Steam Workshop mods against a game version: the public API, page scraping limits, and what evidence to trust",
@@ -2130,6 +2159,66 @@
   "links": [
    "https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage",
    "https://partner.steamgames.com/doc/webapi/ISteamNews"
+  ]
+ },
+ {
+  "path": "techniques/choosing-a-mashup-route.md",
+  "kind": "technique",
+  "title": "Choosing a mashup route: seven ways to put a game inside a game",
+  "tags": [
+   "mashup",
+   "passthrough",
+   "route-selection",
+   "frame-compositing",
+   "geometry-transfer",
+   "shared-simulation",
+   "reimplementation",
+   "asset-conversion",
+   "subsystem-transplant",
+   "ownership"
+  ],
+  "date": "2026-10-05",
+  "agents": [
+   "Claude Code"
+  ],
+  "humans": [
+   "LeiiLo"
+  ],
+  "links": [
+   "https://github.com/chasmlol/SkyCraft",
+   "https://github.com/mrborghini/libertycraft",
+   "https://github.com/vladtrc/iw4L",
+   "https://github.com/samwhosung/benilla"
+  ]
+ },
+ {
+  "path": "techniques/collision-and-combat-bridging.md",
+  "kind": "technique",
+  "title": "Collision and combat across two games: representations, directions and proxies",
+  "tags": [
+   "mashup",
+   "passthrough",
+   "collision",
+   "havok",
+   "bsp",
+   "voxel-proxy",
+   "streaming",
+   "combat",
+   "damage-mapping",
+   "proxies",
+   "vehicles",
+   "recovery"
+  ],
+  "date": "2026-10-05",
+  "agents": [
+   "Claude Code"
+  ],
+  "humans": [
+   "LeiiLo"
+  ],
+  "links": [
+   "https://github.com/chasmlol/SkyCraft",
+   "https://github.com/mrborghini/libertycraft"
   ]
  },
  {
@@ -2210,6 +2299,83 @@
    "custom-race",
    "quadruped"
   ]
+ },
+ {
+  "path": "techniques/evidence-levels-for-mashup-claims.md",
+  "kind": "technique",
+  "title": "Evidence levels: reports, source reading, proposals and real runs",
+  "tags": [
+   "verification",
+   "evidence",
+   "field-notes",
+   "honesty",
+   "attribution",
+   "lineage",
+   "tests",
+   "mashup"
+  ],
+  "date": "2026-10-05",
+  "agents": [
+   "Claude Code"
+  ],
+  "humans": [
+   "LeiiLo"
+  ],
+  "links": []
+ },
+ {
+  "path": "techniques/frame-compositing-depth-and-pose-sync.md",
+  "kind": "technique",
+  "title": "Frame compositing: depth, pose sync, lighting and stale frames",
+  "tags": [
+   "mashup",
+   "passthrough",
+   "frame-compositing",
+   "depth-compositing",
+   "reshade-addon",
+   "reprojection",
+   "camera-sync",
+   "msaa",
+   "readback",
+   "seqlock",
+   "diagnostics"
+  ],
+  "date": "2026-10-05",
+  "agents": [
+   "Claude Code"
+  ],
+  "humans": [
+   "LeiiLo"
+  ],
+  "links": [
+   "https://github.com/rehan-remade/universal-modder/tree/main/examples/minecraft-gta5-passthrough"
+  ]
+ },
+ {
+  "path": "techniques/installers-load-order-and-loaded-code-checks.md",
+  "kind": "technique",
+  "title": "Installers, load order and loaded-code checks for multi-part mods",
+  "tags": [
+   "installer",
+   "uninstall",
+   "backup",
+   "load-order",
+   "asi-loader",
+   "dll-proxy",
+   "steam-drm",
+   "fingerprint",
+   "hash-pinning",
+   "dependencies",
+   "mod-coexistence"
+  ],
+  "date": "2026-10-05",
+  "agents": [
+   "Claude Code"
+  ],
+  "humans": [
+   "LeiiLo"
+  ],
+  "links": []
  },
  {
   "path": "techniques/loading-pre-sequel-assets-in-borderlands-2.md",
@@ -2310,6 +2476,36 @@
    "behavior-provider-definition",
    "reverse-engineering",
    "signatures"
+  ]
+ },
+ {
+  "path": "techniques/rebuilt-guest-engine-inside-a-host.md",
+  "kind": "technique",
+  "title": "A rebuilt guest engine inside a real host: in-process DLL, worker processes, transplants and oracles",
+  "tags": [
+   "mashup",
+   "reimplementation",
+   "skate",
+   "worker-process",
+   "ffi",
+   "c-api",
+   "shared-memory",
+   "coordinate-mapping",
+   "input-normalization",
+   "oracle",
+   "transplant",
+   "recovery"
+  ],
+  "date": "2026-10-05",
+  "agents": [
+   "Claude Code"
+  ],
+  "humans": [
+   "LeiiLo"
+  ],
+  "links": [
+   "https://github.com/chasmlol/2010-rust-rewrite-mashup",
+   "https://github.com/samwhosung/benilla"
   ]
  },
  {
