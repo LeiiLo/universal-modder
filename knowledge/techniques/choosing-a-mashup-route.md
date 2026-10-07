@@ -78,8 +78,9 @@ bridges shared one creator, magic number and layout.
 1. **A "passthrough" that is really an overlay.** **Symptom:** blocks float over host walls or ignore host
    light. **Cause:** a frame overlay without depth, or a separate window ([Garry's Redemption](https://github.com/codeByAlexff/garrys-redemption) ships an overlay
    window above RDR2 that can't do exclusive fullscreen, though its initial design document planned in-frame
-   compositing). **Fix:** decide compositing vs geometry transfer explicitly, and check release notes, not the
-   design doc, before listing a feature.
+   compositing). **Fix:** decide compositing vs geometry transfer explicitly (see
+   `frame-compositing-depth-and-pose-sync.md` and `geometry-transfer-host-draws-guest-meshes.md`), and check
+   release notes, not the design doc, before listing a feature.
 2. **Mixing up route vocabulary between projects.** **Symptom:** an agent ports a technique that cannot work
    in the chosen route (e.g. native shadows on a pasted image). **Cause:** "passthrough" is used for three
    different routes. **Fix:** name the route in `MODLOG.md` and in the field note's `route:` and tags.
