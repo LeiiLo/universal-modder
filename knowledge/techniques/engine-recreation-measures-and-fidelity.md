@@ -49,8 +49,9 @@ add them up, and don't quote one as another.
   gameplay aren't part of it.
 
 ### What a rebuild doesn't give you for free
-- **Determinism.** Identical generated source doesn't fix random numbers, floating-point order, thread
-  order or host inputs. A deterministic build and a deterministic game are separate properties.
+- **Determinism.** Identical generated source doesn't guarantee the same random numbers,
+  floating-point order, thread order or host inputs. A deterministic build and a deterministic game are
+  separate properties.
 - **Graphics, audio and input.** Translating an executable leaves them as runtime work; WiiCompiled routes
   graphics through Aurora/GX and WebGPU/Dawn.
 - **A faster physics tick.** WiiCompiled's 120/144 Hz interpolation changes presentation only and can add
@@ -63,8 +64,8 @@ add them up, and don't quote one as another.
 
 ### Check renderer and loading work with renders
 - SK8-ENGINE's renderer optimisations (bindless texture-slot reuse, conservative occlusion depth, cache
-  keys tied to buffer identity and revision) must still let motion and visibility update. Assertions about
-  data structures can't show that; renders can.
+  keys tied to buffer identity and revision) must still let motion and visibility update. Check that with
+  renders; assertions about data structures can't show it.
 - CS:Craft's stutter fixes are a good starting list: pregenerate terrain, warm up shaders, bound uploads,
   keep mesh handles stable, avoid change notifications, and update lighting on worker threads.
 

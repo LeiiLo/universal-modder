@@ -78,8 +78,8 @@ Physical blocking, AI navigation and visual removal are three separate outcomes;
 - **Keep native attribution.** LibertyCraft adds explicit crime attribution, delayed ragdoll-before-death, safe
   in-car death and a large native health buffer feeding guest-authoritative damage.
 - **Write down what invulnerability costs.** Making the host player explosion-proof to stop double damage
-  also blocks legitimate host explosion damage.
-- **Give fast projectiles at least two frames of life.** A host bullet whose life is shorter than one
+  also blocks real host explosion damage.
+- **Give short-lived bullets about two frames of life.** A host bullet whose life is shorter than one
   collision frame never hits (see gotcha 7 in
   `knowledge/games/elden-ring/cs2-conversion-of-elden-ring-offline-native-rust-dll-via-me3.md`).
 

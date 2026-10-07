@@ -33,8 +33,8 @@ Compare `choosing-a-mashup-route.md` and the mashup skill's patterns 3–5.
 | **Shared mechanic library for several hosts** | [Faith Runner](https://github.com/tnrjns/faith-runner): Mirror's Edge movement in Rust, statically linked into an SKSE plugin and loaded by Minecraft through Java's FFI | one mechanic, many hosts; each host supplies only box sweeps and overlap queries |
 | **Mechanic inside a rebuilt host engine** | Diablo II movement in DevilutionX: fine coordinates above Diablo I tile occupancy, combat and saves | smallest scope; host systems stay authoritative |
 
-Some projects load a 32-bit rebuilt engine DLL straight into an older 32-bit host. That works, but it inherits
-every constraint of the first row.
+Some projects load a 32-bit rebuilt engine DLL straight into an older 32-bit host, which brings every
+constraint of the first row.
 
 ### Write a small fixed contract (BullySkate as the model)
 - **No pointers, fixed size.** Bully ↔ physics shares a 6,184-byte C-compatible block, PID-scoped, with
@@ -56,8 +56,8 @@ Note its precedence rule: any connected XInput pad wins over SDL.
 
 ### Keep the host's own systems alive
 ER Mario keeps a hidden native Tarnished following Mario, so Elden Ring still handles doors, menus, quests,
-deaths and saves. Mario's progress goes in a separate offline save. Replacing the native player outright
-would mean rebuilding each of those systems.
+deaths and saves. Mario's progress goes in a separate offline save. Without the native character, each of
+those systems would need rebuilding.
 
 ### Check against the original where you can
 The Diablo II movement mod compares its tables with a user-supplied Diablo II 1.12 `D2Common.dll` and

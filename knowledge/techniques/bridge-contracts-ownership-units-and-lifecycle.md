@@ -64,8 +64,8 @@ transplanted subsystem behind a C API, or a worker process. See `choosing-a-mash
 
 SkyCraft's header also carries process IDs, heartbeats and epochs, so a reader can tell a live peer from
 stale data, and it keeps the previous and current Minecraft tick so the host can interpolate 20 Hz ticks
-into its own frame rate. Its Java and C++ layouts are mirrored by hand, which is the drift a layout test
-(below) catches.
+into its own frame rate. Its Java and C++ layouts are mirrored by hand, so they can drift apart; the
+layout test below catches that.
 
 ### Byte order and layout
 [GalaxyCraft](https://github.com/M0uidev/GalaxyCraft)'s host protocol is little-endian (version 10) while the emulated PowerPC mailbox is big-endian
