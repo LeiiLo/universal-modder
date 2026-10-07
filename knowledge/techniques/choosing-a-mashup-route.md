@@ -96,7 +96,8 @@ bridges shared one creator, magic number and layout.
 6. **"Same language" assumed to mean composable.** **Cause:** two Rust/Bevy engines still disagree on
    coordinates, entity IDs, physics, input, animation and saves. CS:Craft's plan to "stitch" with IW4L
    (shared content IDs, per-game weapon behaviour, a common trace interface) is still a design.
-   **Fix:** list each seam explicitly before promising a merge.
+   **Fix:** list each seam explicitly before promising a merge (see
+   `engine-recreation-measures-and-fidelity.md`).
 
 ## Verification
 Per-project versions are in

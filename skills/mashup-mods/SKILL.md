@@ -132,6 +132,8 @@ user supplies their own ROM for assets.
   - A **publish check** that greps for retail offsets and decompiler names before any push
     (`um publish check` does a version of this).
   - Converters that run on the user's files; game assets never committed.
+- **Measures and fidelity:** `knowledge/techniques/engine-recreation-measures-and-fidelity.md` covers how each
+  kind of rebuild is measured, why scripts are part of fidelity, and the SDK rules other mods need.
 
 ## Pattern 5: reimplement the guest's rules headless, keep the host as the view
 The host stays the real game (its weapons, mods and multiplayer); only the guest's *rules* are rewritten,
