@@ -11,23 +11,38 @@ that delivers the idea, and plan the oracles before writing code: these projects
 lacking code.
 
 ## Before picking a pattern
-- **Name the route.** "Passthrough" covers three different builds (state exchange, a composited picture, the
-  host drawing guest meshes); two more routes, a shared neutral simulation and a single transplanted
-  mechanic, aren't covered by the patterns below. See
-  `knowledge/techniques/choosing-a-mashup-route.md`.
-- **Find the closest prior project** in `references/mashup-cases.md` (versions, ownership, units,
-  transport and evidence level).
-- **Write the bridge contract** before bridge code: who owns the player and how control returns, units and
-  axes, channels and their full/late policy, protocol version and byte order, lifecycle. See
-  `knowledge/techniques/bridge-contracts-ownership-units-and-lifecycle.md`.
-- **If the guest is rebuilt rather than run** (the Skate 3 engine in Bully and Garry's Mod; one
-  transplanted mechanic), see `knowledge/techniques/rebuilt-guest-engine-inside-a-host.md` for in-process
-  vs worker placement, fixed contracts and reference oracles.
-- **Before shipping an installer or loader**, read
-  `knowledge/techniques/installers-load-order-and-loaded-code-checks.md` (loaded-code checks, load order,
-  pinned downloads, exact uninstall).
-- **Keep evidence levels apart** when reading other projects and when reporting: creator report, design,
-  source reading, synthetic test, real run. See `knowledge/techniques/evidence-levels-for-mashup-claims.md`.
+Work through these steps before writing any mashup code. The routes, patterns and projects they point to
+come from existing mashups. Start from the closest one, or design something else and write down why. The
+Guardrails at the end always apply.
+
+1. **Work out what the user wants from the guest game.** Its real behaviour (physics, inventory, combat),
+   or only its look or one mechanic? Ask if it isn't clear. The answer decides whether the guest has to
+   run at all, and which route is the lightest that delivers the idea.
+2. **Name the closest mashup route.** `knowledge/techniques/choosing-a-mashup-route.md` sorts mashups
+   into seven routes. "Passthrough" on its own is ambiguous: it covers three different builds (state
+   exchange, a composited picture, the host drawing guest meshes).
+3. **Find the nearest prior project** in `references/mashup-cases.md` (route, versions, who owns the
+   player, units, transport). If you can reach its repository, read its README and design doc. Treat what
+   you read there as the creator's report until you've run it yourself. Also run `um kb search` for both
+   games and both engines; other agents' notes on either game apply here too.
+4. **If the guest is rebuilt rather than run** (its engine, or one of its mechanics, rebuilt inside the real
+   host), read `knowledge/techniques/rebuilt-guest-engine-inside-a-host.md` for where the rebuilt part
+   should run and how to check it against the original.
+5. **Write the contract wherever state crosses** between two games, engines or processes: who owns the
+   player and how control comes back, units and axes, each channel and what happens when it's full or
+   late, protocol version and byte order, lifecycle. Keep it in `docs/CONTRACT.md`; see
+   `knowledge/techniques/bridge-contracts-ownership-units-and-lifecycle.md`.
+6. **Decide how you'll know it works** before adding features: a first slice for your route and the
+   check that proves it. See the first-slice table in `knowledge/techniques/choosing-a-mashup-route.md`
+   and `knowledge/techniques/oracles-how-agents-know-a-mod-works.md`.
+7. **Record the plan and tell the user before building.** Write the route you chose and why into
+   `MODLOG.md`, as the `mod-any-game` skill already asks. Tell the user the same, plus what every player
+   will need to own and install (and on which OS), and where your plan differs from the nearest prior
+   project.
+
+Later, before shipping an installer or loader, read
+`knowledge/techniques/installers-load-order-and-loaded-code-checks.md` (loaded-code checks, load order,
+pinned downloads, exact uninstall).
 
 ## Pattern 1: port the content (lightest)
 Bring an enemy, weapon or block type into the host as **new host content** that imitates the guest.
