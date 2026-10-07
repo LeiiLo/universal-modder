@@ -3,7 +3,7 @@ kind: technique
 title: "Geometry transfer: the host draws the guest's meshes"
 tags: [mashup, passthrough, geometry-transfer, mesh-export, texture-atlas, render-state, depth, lighting, digging, emulator]
 date: 2026-10-07
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: ["https://github.com/chasmlol/SkyCraft", "https://github.com/mrborghini/libertycraft", "https://github.com/SawyerTheNerd/Minecraft-X-HalfLife", "https://github.com/M0uidev/GalaxyCraft"]
 ---

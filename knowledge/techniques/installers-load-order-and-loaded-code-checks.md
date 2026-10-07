@@ -3,7 +3,7 @@ kind: technique
 title: "Installers, load order and loaded-code checks for multi-part mods"
 tags: [installer, uninstall, backup, load-order, asi-loader, dll-proxy, steam-drm, fingerprint, hash-pinning, dependencies, mod-coexistence]
 date: 2026-10-05
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: []
 ---

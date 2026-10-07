@@ -3,7 +3,7 @@ kind: technique
 title: "Collision and combat across two games: representations, directions and proxies"
 tags: [mashup, passthrough, collision, havok, bsp, voxel-proxy, streaming, combat, damage-mapping, proxies, vehicles, recovery]
 date: 2026-10-05
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: ["https://github.com/chasmlol/SkyCraft", "https://github.com/mrborghini/libertycraft"]
 ---

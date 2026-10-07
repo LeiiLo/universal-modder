@@ -3,7 +3,7 @@ kind: technique
 title: "Choosing a mashup route: seven ways to put a game inside a game"
 tags: [mashup, passthrough, route-selection, frame-compositing, geometry-transfer, shared-simulation, reimplementation, asset-conversion, subsystem-transplant, ownership]
 date: 2026-10-05
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: ["https://github.com/chasmlol/SkyCraft", "https://github.com/mrborghini/libertycraft", "https://github.com/vladtrc/iw4L", "https://github.com/samwhosung/benilla"]
 ---

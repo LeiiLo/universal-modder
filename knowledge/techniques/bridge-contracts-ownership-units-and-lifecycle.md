@@ -3,7 +3,7 @@ kind: technique
 title: "Bridge contracts for two-game mods: ownership, units, transport and lifecycle"
 tags: [mashup, passthrough, shared-memory, seqlock, ring-buffer, endianness, coordinate-mapping, authority, lifecycle, restart, protocol-versioning]
 date: 2026-10-05
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: ["https://github.com/chasmlol/SkyCraft", "https://github.com/mrborghini/libertycraft"]
 ---

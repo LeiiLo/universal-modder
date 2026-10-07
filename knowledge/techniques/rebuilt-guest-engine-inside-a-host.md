@@ -3,7 +3,7 @@ kind: technique
 title: "A rebuilt guest engine inside a real host: in-process DLL, worker processes, transplants and oracles"
 tags: [mashup, reimplementation, skate, worker-process, ffi, c-api, shared-memory, coordinate-mapping, input-normalization, oracle, transplant, recovery]
 date: 2026-10-05
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: ["https://github.com/chasmlol/2010-rust-rewrite-mashup", "https://github.com/samwhosung/benilla"]
 ---

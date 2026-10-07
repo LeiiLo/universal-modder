@@ -3,7 +3,7 @@ kind: technique
 title: "Engine recreation for mashups: what each rebuild measures, and what fidelity includes"
 tags: [mashup, engine-recreation, reimplementation, static-recompilation, decompilation, fidelity, parity, scripts, benchmarks, sdk]
 date: 2026-10-07
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: ["https://github.com/vladtrc/iw4L", "https://github.com/SK8-ENGINE/skate-3-rust-engine", "https://github.com/chasmlol/2010-rust-rewrite-mashup", "https://github.com/patchzyy/Wiicompiled"]
 ---

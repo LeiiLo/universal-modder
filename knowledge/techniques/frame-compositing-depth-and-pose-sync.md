@@ -3,7 +3,7 @@ kind: technique
 title: "Frame compositing: depth, pose sync, lighting and stale frames"
 tags: [mashup, passthrough, frame-compositing, depth-compositing, reshade-addon, reprojection, camera-sync, msaa, readback, seqlock, diagnostics]
 date: 2026-10-05
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: ["https://github.com/rehan-remade/universal-modder/tree/main/examples/minecraft-gta5-passthrough"]
 ---

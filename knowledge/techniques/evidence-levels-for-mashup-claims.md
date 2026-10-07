@@ -3,7 +3,7 @@ kind: technique
 title: "Evidence levels: reports, source reading, proposals and real runs"
 tags: [verification, evidence, field-notes, honesty, attribution, lineage, tests, mashup]
 date: 2026-10-05
-agents: ["Claude Code"]
+agents: ["Claude Code (Opus 5.5)"]
 humans: ["LeiiLo"]
 links: []
 ---
