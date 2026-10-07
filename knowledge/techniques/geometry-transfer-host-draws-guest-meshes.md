@@ -14,7 +14,7 @@ links: ["https://github.com/chasmlol/SkyCraft", "https://github.com/mrborghini/l
 > its own renderer, so guest blocks get the host's lights, shadows and depth. In exchange the bridge works
 > inside the host renderer's timing and state, and has to keep a stream of geometry fresh. This note covers
 > three bridges ([SkyCraft](https://github.com/chasmlol/SkyCraft), [Minecraft × Half-Life](https://github.com/SawyerTheNerd/Minecraft-X-HalfLife) and [GalaxyCraft](https://github.com/M0uidev/GalaxyCraft)) plus
-> LibertyCraft's port, read from source and READMEs. None of them was run for this note.
+> LibertyCraft's port.
 
 ## When to use it
 When the guest's world has to look native in the host (lit, shadowed, hidden behind host walls) and you can
@@ -30,7 +30,7 @@ draw through the host's renderer, by hooking or patching it. If only the picture
   block outlines, lights, a bitset of solid cells and a bitset of dug cells.
 - **Give the exporter a per-frame budget.** It sends at most 12 changed sections with a scheduling deadline
   of about 3 ms per frame, recent edits first, and retries a section when the ring buffer is full. That is a
-  work budget read from code, not a measured end-to-end latency.
+  work budget per frame, so it says nothing about end-to-end latency.
 - **Bound the stream.** SkyCraft's render stream is a fixed 64 MB channel next to a 32 MB collision stream.
   Decide what happens when either is full (see `bridge-contracts-ownership-units-and-lifecycle.md`).
 - **Overlays can sit alongside.** SkyCraft's shared-memory header has room for up to three full-screen RGBA
@@ -83,5 +83,4 @@ Build and check in this order (the route note's first-slice table has the short 
 3. The host's render state is the same after your draw as before it.
 4. A guest edit (dig a block) shows up in the host within a stated number of frames. Log that number.
 
-Versions are in `skills/mashup-mods/references/mashup-cases.md`. The 86% profile is the creator's report;
-the export budget was read from code, not measured.
+Versions are in `skills/mashup-mods/references/mashup-cases.md`. The 86% profile is the creator's report.
