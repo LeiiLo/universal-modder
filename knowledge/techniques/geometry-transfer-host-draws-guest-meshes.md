@@ -65,9 +65,9 @@ cutting and refilled holes are in `collision-and-combat-bridging.md`.
 2. **Destruction only near the host player.** SkyCraft destroys host terrain only where the host knows native
    geometry, so explosions far from the player leave Skyrim untouched. **Fix:** document limits like this
    next to the feature.
-3. **Blast checks eat the frame.** SkyCraft 0.1.2 keeps nearby triangles and prunes distant ones when
-   classifying blast material. The commit cites a profile in which the old probe took 86% of server-thread
-   time (creator profile). **Fix:** limit material checks to the area the blast can reach.
+3. **Blast checks can take over the server thread.** SkyCraft 0.1.2 keeps nearby triangles and prunes
+   distant ones when classifying blast material. The commit cites a profile in which the old probe took 86%
+   of server-thread time (creator profile). **Fix:** limit material checks to the area the blast can reach.
 4. **Interiors share coordinates.** In SkyCraft, blocks placed in one interior can show up in another.
    **Fix (not built there):** key guest data by host worldspace or cell as well as position.
 5. **Multiplayer shares only the guest.** SkyCraft shares one Minecraft world between players while each
