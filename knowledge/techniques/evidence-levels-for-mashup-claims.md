@@ -55,6 +55,18 @@ Only the last row supports `status: working` from your own work, and only for th
   its own docs say runs aren't comparable with stock; full-run replay parity is unverified.
 - **Docs stronger than code.** [Signet](https://github.com/kian-cx/signetprotocol)'s docs say the client never blocks and that authority prevents
   cheating; the code writes TCP under a lock and the roadmap lists command-rate checks as pending.
+- **A clip of one mode.** [Halo / MW2 Director](https://github.com/0xburn/halo-mw2-director) has an authored cinematic, an imported map that MW2's
+  rules run, and a bot match. Footage of one says nothing about the others, so name the mode a clip shows.
+- **A source repo's "no assets" wording.** [CS:Craft](https://github.com/FrosttysBots/CS-Craft)'s source copies no assets, but its Windows release
+  bundles a Minecraft client JAR and assets (its release README says so). [WiiCompiled](https://github.com/patchzyy/Wiicompiled)'s runtime assets
+  list emulator-derived DSP coefficients despite broad "no Nintendo data" wording. Check the release package
+  as well as the repo.
+- **A negative result without its scope.** Host depth that's flat in the main menu says nothing about depth
+  during gameplay. Record where a negative result was taken.
+- **An edited video.** Cuts hide stale frames, sampled frames miss short events, and automatic captions
+  misname games.
+- **An action the bridge offers.** In [chasm](https://github.com/chasmlol/chasm) (language-model NPCs with a Fallout: New Vegas bridge), an
+  action being available isn't proof it ran in the game.
 
 ### Lineage and attribution
 - Record the exact upstream commit a fork started from. LibertyCraft's first commit says it forks [SkyCraft](https://github.com/chasmlol/SkyCraft)'s
@@ -65,6 +77,8 @@ Only the last row supports `status: working` from your own work, and only for th
 - AI credit attaches to the work its author credits. Explicit model credits exist for several projects
   ([NewVegasCraft](https://github.com/Davozh/new-vegascraft)'s pages, the Half-Life bridge, Garry's Redemption releases); historical foundations such as
   older decompilation projects and [DevilutionX](https://github.com/diasurgical/DevilutionX) are human-led. Absence of credit is not proof either way.
+- A project in a recent video isn't necessarily AI-made. [libsm64](https://github.com/libsm64/libsm64) had Garry's Mod hosts calling into it
+  long before the current wave of AI-made mashups.
 
 ### In a field note
 - `status:` describes your own verified state; quote others' claims in the text.

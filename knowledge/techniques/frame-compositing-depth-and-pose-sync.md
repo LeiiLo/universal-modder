@@ -87,7 +87,8 @@ the loop (a synthetic test, not proof of real alignment).
    with every capture.
 10. **Cross-compiler ABI.** NewVegasCraft's initial page describes an MSVC/GCC hidden-return-pointer workaround
     for a ReShade struct-returning virtual method. 32-bit hosts also need address-space budgeting: a whole-map
-    allocation can matter.
+    allocation can matter. NewVegasCraft also crashed on its first native collision ray because a 4-byte-aligned
+    stack met 16-byte SSE loads; aligned storage fixed it.
 
 ## Verification
 The creator

@@ -51,6 +51,8 @@ transplanted subsystem behind a C API, or a worker process. See `choosing-a-mash
 | [Faith Runner](https://github.com/tnrjns/faith-runner) in Skyrim | 70 units per metre |
 | [Killcraft](https://github.com/goonsn/Killcraft) (ULTRAKILL) | 2 host units per block |
 | Garry's Redemption design | 0.01905 m per Source unit, with a planned floating origin |
+| SkyCraft | 70 host units per block |
+| [2010 Rust Rewrite Mashup](https://github.com/chasmlol/2010-rust-rewrite-mashup) | 36 host units per block |
 
 ### Channel delivery policies (LibertyCraft, inherited from SkyCraft's Windows transport)
 - **Seqlock snapshots** for continuously replaced state (pose, player state). The counter is odd while
@@ -60,11 +62,55 @@ transplanted subsystem behind a C API, or a worker process. See `choosing-a-mash
 - **Latest-frame triple buffering** for images and overlays.
 - **Restart generations**: a changed generation triggers a resend of state the other side lost.
 
+SkyCraft's header also carries process IDs, heartbeats and epochs, so a reader can tell a live peer from
+stale data, and it keeps the previous and current Minecraft tick so the host can interpolate 20 Hz ticks
+into its own frame rate. Its Java and C++ layouts are mirrored by hand, which is the drift a layout test
+(below) catches.
+
 ### Byte order and layout
 [GalaxyCraft](https://github.com/M0uidev/GalaxyCraft)'s host protocol is little-endian (version 10) while the emulated PowerPC mailbox is big-endian
 (version 5); many display-list/model payloads are already big-endian and must not be swapped again. A shared
 C assertion file pins offsets, region lengths and struct sizes. Add the same kind of compile-time layout
 test on both sides.
+
+### Template for `docs/CONTRACT.md`
+```markdown
+# Bridge contract: <guest> inside <host>
+
+Route: <passthrough | frame compositing | geometry transfer | rebuilt engine | ...>
+Host: <game, exact build, loader + version, OS / translation layer + version>
+Guest: <game or engine, exact version, loader + version>
+
+## Ownership
+| System | Owner | Hand-over trigger | How it comes back |
+|---|---|---|---|
+| Player movement | | | |
+| Camera | | | |
+| Collision host → guest | | | |
+| Collision guest → host | | | |
+| NPCs | | | |
+| Damage / health | | | |
+| Inventory | | | |
+| Saves | | | |
+| Menus / pause / loading | | | |
+| Cutscenes / vehicles / furniture | | | |
+
+## Units and axes
+host_to_guest(x, y, z) = ...
+
+## Channels
+| Name | Kind | Direction | Rate | When full or late |
+|---|---|---|---|---|
+
+## Protocol
+Magic: ... Version: ... Byte order: ... Restart detection: ...
+
+## Lifecycle
+Start order / pause / level change / death / disconnect / crash / uninstall
+
+## Not covered
+...
+```
 
 ## Gotchas
 1. **Matching magic, different meaning.** **Symptom:** a bridge built for one host half-works on another.

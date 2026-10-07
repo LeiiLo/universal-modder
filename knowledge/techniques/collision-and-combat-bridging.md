@@ -41,6 +41,9 @@ become bounding boxes, some unknown shapes are skipped. LibertyCraft uses smooth
 player, voxels for other guest entities, full-cell masks for host NPC obstruction, and column heights for
 native water. Name the representation whenever you write "exact collision".
 
+SkyCraft also tells apart a region it knows is empty from a region it hasn't received yet. Do the same in
+the guest, or players fall through ground that hasn't arrived yet.
+
 ### 3. Send guest builds back to the host (the other direction)
 | Project | Guest → host |
 |---|---|
@@ -68,11 +71,17 @@ Physical blocking, AI navigation and visual removal are three separate outcomes;
   invisible host doubles so host AI can target them. SkyCraft repositions client proxies every frame because
   server-tick replication was too late for visual hit alignment.
 - **Put the unit in the damage message.** MC 20 → Half-Life 100 (×5) in the GoldSrc bridge; native HP in the
-  MHW bridge; MC damage converted by target max HP in the ER bridge.
+  MHW bridge; MC damage converted by target max HP in the ER bridge. SkyCraft scales damage by NPC level,
+  so fights don't play like vanilla Minecraft; say which feel you're aiming for.
 - **Deduplicate.** The GTA V example remembers eight recent explosion positions for half a second and stops
   player projectiles hitting ped proxies.
 - **Keep native attribution.** LibertyCraft adds explicit crime attribution, delayed ragdoll-before-death, safe
   in-car death and a large native health buffer feeding guest-authoritative damage.
+- **Write down what invulnerability costs.** Making the host player explosion-proof to stop double damage
+  also blocks legitimate host explosion damage.
+- **Give fast projectiles at least two frames of life.** A host bullet whose life is shorter than one
+  collision frame never hits (see gotcha 7 in
+  `knowledge/games/elden-ring/cs2-conversion-of-elden-ring-offline-native-rust-dll-via-me3.md`).
 
 ## Gotchas
 1. **Host NPCs walk through guest blocks.** **Cause:** collision was only sent host → guest. **Fix:** add the

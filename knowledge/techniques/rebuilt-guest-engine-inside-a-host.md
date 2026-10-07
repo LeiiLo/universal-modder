@@ -12,7 +12,8 @@ links: ["https://github.com/chasmlol/2010-rust-rewrite-mashup", "https://github.
 
 > Many "Game B inside Game A" projects never run Game B's executable. They rebuild Game B's engine, or one
 > of its mechanics, and plug it into the real host: the Skate 3 engine in Bully, Garry's Mod, a
-> recreated WoW client and older 32-bit hosts; Mirror's Edge movement in Skyrim and Minecraft; [Diablo II movement](https://github.com/ITSTDMCC/DevilutionX-D2-Movement) in
+> recreated WoW client and older 32-bit hosts; Mirror's Edge movement in Skyrim and Minecraft; Mario 64's
+> movement in Elden Ring; [Diablo II movement](https://github.com/ITSTDMCC/DevilutionX-D2-Movement) in
 > [DevilutionX](https://github.com/diasurgical/DevilutionX). This note compares where the rebuilt part runs and how each project checked it.
 
 ## When to use it
@@ -25,11 +26,15 @@ Compare `choosing-a-mashup-route.md` and the mashup skill's patterns 3–5.
 ### Choose where the rebuilt part runs
 | Placement | Example | Consequence |
 |---|---|---|
-| **In-process DLL behind a C API** | a 32-bit Rust Skate engine DLL loaded by a native ASI plugin in an older 32-bit host (seen in some projects) | lowest latency, but must match the host's bitness and address budget; a guest fault is a host fault, so the guest must recover itself |
+| **In-process DLL behind a C API** | [ER Mario](https://github.com/deltarooo/er-mario) compiles the C library [libsm64](https://github.com/libsm64/libsm64) into a Rust DLL that Elden Ring loads through me3 | lowest latency, but must match the host's bitness and address budget; a guest fault is a host fault, so the guest must recover itself |
 | **Worker processes** | [BullySkate](https://github.com/Faiqie/BullySkate): x86 Bully adapter + x64 Skate physics worker + separate sound worker | the guest can be 64-bit beside a 32-bit host and keep big state off the host's threads; needs a transport contract and lifetime binding |
+| **Inside a host scripting runtime** | [SkateGM](https://github.com/the-schwilliam/SkateGM): the rebuilt Skate engine in Garry's Mod through a native module and Lua | the host's scripting decides what's easy; moving props need their own collision layer |
 | **Inside a recreated host** | [World of Skatecraft](https://github.com/Kimmo3223/world-of-skatecraft): Skate engine added to [benilla](https://github.com/samwhosung/benilla) (recreated WoW 1.12.1 client) through an extension entry point that accepts extra Bevy plugins | no foreign process at all, but you depend on the recreated host's own fidelity |
 | **Shared mechanic library for several hosts** | [Faith Runner](https://github.com/tnrjns/faith-runner): Mirror's Edge movement in Rust, statically linked into an SKSE plugin and loaded by Minecraft through Java's FFI | one mechanic, many hosts; each host supplies only box sweeps and overlap queries |
 | **Mechanic inside a rebuilt host engine** | Diablo II movement in DevilutionX: fine coordinates above Diablo I tile occupancy, combat and saves | smallest scope; host systems stay authoritative |
+
+Some projects load a 32-bit rebuilt engine DLL straight into an older 32-bit host. That works, but it inherits
+every constraint of the first row.
 
 ### Write a small fixed contract (BullySkate as the model)
 - **No pointers, fixed size.** Bully ↔ physics shares a 6,184-byte C-compatible block, PID-scoped, with
@@ -45,9 +50,14 @@ Compare `choosing-a-mashup-route.md` and the mashup skill's patterns 3–5.
 - **Hand back.** The player leaves the board for doors, shops and missions, then re-mounts.
 
 ### Normalise at the engine boundary
-[SkateGM](https://github.com/the-schwilliam/SkateGM) converts SDL controllers (PlayStation, Switch, generic) into the Xbox-shaped input structure the
+SkateGM converts SDL controllers (PlayStation, Switch, generic) into the Xbox-shaped input structure the
 rebuilt engine already used, and picks button labels separately. The engine's input ABI never changed.
 Note its precedence rule: any connected XInput pad wins over SDL.
+
+### Keep the host's own systems alive
+ER Mario keeps a hidden native Tarnished following Mario, so Elden Ring still handles doors, menus, quests,
+deaths and saves. Mario's progress goes in a separate offline save. Replacing the native player outright
+would mean rebuilding each of those systems.
 
 ### Check against the original where you can
 The Diablo II movement mod compares its tables with a user-supplied Diablo II 1.12 `D2Common.dll` and
@@ -68,7 +78,11 @@ Ghidra-inspected native code. Missing owned files skip those checks, so record w
 4. **Host collision for the guest.** Some in-process builds rebuild nearby car collision at most once a
    second after a set distance of movement and skip identical batches by hash; BullySkate uses physical COL volumes, not
    navigation volumes, and versions its grind-rail format (BMRL2 → BMRL3) with a receipt schema check;
-   SkateGM needs an explicit collision layer for moving props.
+   SkateGM needs an explicit collision layer for moving props. ER Mario's collision notes list the traps
+   when Havok feeds libsm64: mirrored coordinate systems and triangle winding, convex hull orientation,
+   moving-platform displacement, sequential wall correction, where ceiling queries are anchored, and stale
+   invisible guard walls. Its tests cover translations, rotations, stream changes and rebasing, not every
+   Havok situation.
 5. **Unported original behaviour.** SkateGM skips an unported air-dismount producer instead of failing the
    tick; Faith Runner substitutes an undecoded vertigo predicate and enables auto-step that the original
    disabled. **Fix:** list substitutions next to features.
