@@ -59,8 +59,8 @@ Only the last row supports `status: working` from your own work, and only for th
   rules run, and a bot match. Footage of one says nothing about the others, so name the mode a clip shows.
 - **A source repo's "no assets" wording.** CS:Craft's source copies no assets, but its Windows release
   bundles a Minecraft client JAR and assets (its release README says so). Check the release package as well as
-  the repo. [WiiCompiled](https://github.com/patchzyy/Wiicompiled)'s THIRD-PARTY-NOTICES is a good model: it lists every
-  bundled runtime file and where it came from.
+  the repo. [WiiCompiled](https://github.com/patchzyy/Wiicompiled)'s THIRD-PARTY-NOTICES lists every bundled runtime file
+  and where it came from: copy that.
 - **A negative result without its scope.** Host depth that's flat in the main menu says nothing about depth
   during gameplay. Record where a negative result was taken.
 - **An edited video.** Cuts hide stale frames, sampled frames miss short events, and automatic captions
@@ -75,7 +75,7 @@ Only the last row supports `status: working` from your own work, and only for th
 - A fork's history includes the upstream's commits and their credits. [FalloutCraft](https://github.com/zeyvu/FalloutCraft)'s history carries SkyCraft
   commits co-authored with an AI model; they don't describe the later Fallout-specific changes.
 - AI credit attaches to the work its author credits. Explicit model credits exist for several projects
-  ([NewVegasCraft](https://github.com/Davozh/new-vegascraft)'s pages, the Half-Life bridge, Garry's Redemption releases); historical foundations such as
+  ([NewVegasCraft](https://github.com/Davozh/new-vegascraft)'s pages, the Half-Life bridge, Garry's Redemption); historical foundations such as
   older decompilation projects and DevilutionX are human-led. Absence of credit is not proof either way.
 - A project in a recent video isn't necessarily AI-made. libsm64 had Garry's Mod hosts calling into it
   long before the current wave of AI-made mashups.
