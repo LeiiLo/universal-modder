@@ -32,8 +32,8 @@ Guardrails at the end always apply.
    player and how control comes back, units and axes, each channel and what happens when it's full or
    late, protocol version and byte order, lifecycle. Keep it in `docs/CONTRACT.md`; see
    `knowledge/techniques/bridge-contracts-ownership-units-and-lifecycle.md`.
-6. **Decide how you'll know it works** before adding features: a first slice for your route and the
-   check that proves it. See the first-slice table in `knowledge/techniques/choosing-a-mashup-route.md`
+6. **Decide how you'll know it works.** Before adding features, pick a first slice for your route and
+   the check that proves it. See the first-slice table in `knowledge/techniques/choosing-a-mashup-route.md`
    and `knowledge/techniques/oracles-how-agents-know-a-mod-works.md`.
 7. **Record the plan and tell the user before building.** Write the route you chose and why into
    `MODLOG.md`, as the `mod-any-game` skill already asks. Tell the user the same, plus what every player
