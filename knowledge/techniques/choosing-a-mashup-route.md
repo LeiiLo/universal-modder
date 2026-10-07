@@ -25,11 +25,11 @@ patterns map onto the routes below.
 | Route | What runs | What crosses | Every player needs | Examples |
 |---|---|---|---|---|
 | **Live passthrough** (state exchange) | both real games | positions, collision, hits, events | both games + both loaders | [SkyCraft](https://github.com/chasmlol/SkyCraft) (Skyrim/SKSE + Minecraft/Fabric), [LibertyCraft](https://github.com/mrborghini/libertycraft) (GTA IV fork of SkyCraft), [ValCraft](https://github.com/LoAlCo/ValCraft), [Killcraft](https://github.com/goonsn/Killcraft) |
-| **Frame compositing** (picture transport) | both real games | colour + depth + HUD images and a camera pose | both games | `examples/minecraft-gta5-passthrough`, CrossOver Elden Ring / Monster Hunter: World bridges, [NewVegasCraft](https://github.com/Davozh/new-vegascraft), [Wither Storm](https://github.com/VortexisTV/wither-storm-gta5-passthrough) × GTA V |
+| **Frame compositing** (picture transport) | both real games | colour + depth + HUD images and a camera pose | both games | `examples/minecraft-gta5-passthrough`, CrossOver Elden Ring / Monster Hunter: World bridges, [NewVegasCraft](https://github.com/Davozh/new-vegascraft), Wither Storm × GTA V |
 | **Native geometry transfer** | both real games; the host draws guest meshes | meshes, atlases, collision | both games | SkyCraft's renderer, LibertyCraft, [Minecraft × Half-Life](https://github.com/SawyerTheNerd/Minecraft-X-HalfLife) (GoldSrc), [GalaxyCraft](https://github.com/M0uidev/GalaxyCraft) (SMG2 in Dolphin) |
 | **Shared neutral simulation** | a separate server; games are viewers | neutral state and input intents | a viewer | [Signet](https://github.com/kian-cx/signetprotocol) |
-| **Engine recreation** | one rebuilt engine reading owned data | nothing; one process | the original's files | [IW4L](https://github.com/vladtrc/iw4L), [benilla](https://github.com/samwhosung/benilla), [HL2-RS](https://github.com/kvalls/hl2-rs), [2010 Rust Rewrite Mashup](https://github.com/chasmlol/2010-rust-rewrite-mashup), [CS:Craft](https://github.com/FrosttysBots/CS-Craft), [World of Skatecraft](https://github.com/Kimmo3223/world-of-skatecraft) (Skate engine added to benilla) |
-| **Asset / map conversion** | the host only | converted files, made offline | the host (and own copy of the source) | Doom WADs rebuilt in Hytale, one open-world RPG converted into another, [PipeLink](https://github.com/Sm1jjj/PipeLinkLauncher) converters, a Halo CE map imported into IW4L |
+| **Engine recreation** | one rebuilt engine reading owned data | nothing; one process | the original's files | [IW4L](https://github.com/vladtrc/iw4L), [benilla](https://github.com/samwhosung/benilla), [HL2-RS](https://github.com/kvalls/hl2-rs), [2010 Rust Rewrite Mashup](https://github.com/chasmlol/2010-rust-rewrite-mashup), CS:Craft, [World of Skatecraft](https://github.com/Kimmo3223/world-of-skatecraft) (Skate engine added to benilla) |
+| **Asset / map conversion** | the host only | converted files, made offline | the host (and own copy of the source) | Doom WADs rebuilt in Hytale, one open-world RPG converted into another, PipeLink converters, a Halo CE map imported into IW4L |
 | **Rebuilt guest engine or mechanic in a real host** | the real host plus a rebuilt guest engine or one rebuilt mechanic | the rebuilt part's state, via a DLL or a worker process | the host + own copy of guest data | Skate 3 engine in Bully ([BullySkate](https://github.com/Faiqie/BullySkate) workers) and Garry's Mod ([SkateGM](https://github.com/the-schwilliam/SkateGM)); [Faith Runner](https://github.com/tnrjns/faith-runner); AC1 movement; Diablo II movement in DevilutionX |
 
 Out of scope here, though also called mashups: cross-game progression links (multiworld randomizers), protocol
@@ -53,7 +53,7 @@ combat is the common combination.
    renderer's timing and state. No means a pasted picture with image-estimated lighting and stale-frame
    risks (`frame-compositing-depth-and-pose-sync.md`).
 4. **What must every player own and run, and on which OS?** Record exact builds from day one: some
-   hosts need a downgraded 1.0 executable; NewVegasCraft targets Steam 1.4.0.525; the GTA V example was tested on
+   hosts need one exact executable version; NewVegasCraft targets Steam 1.4.0.525; the GTA V example was tested on
    Legacy build 3889. Windows hosts can run elsewhere through a translation layer, by creator report:
    LibertyCraft (GTA IV under Wine on Linux), NewVegasCraft (Proton), the [CrossOver bridges](https://github.com/justbustin/minecraft-crossover-bridge) (macOS, native
    Minecraft). Each needed platform-specific fixes; name the layer and version.

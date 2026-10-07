@@ -23,7 +23,7 @@ game, and when a mod "doesn't load" for some users.
    file on disk doesn't show the real code. [BullySkate](https://github.com/Faiqie/BullySkate) launches Bully through Steam, then its native plugin
    requires all 203 code fingerprints and 19 data locations before installing hooks. [Touhou HFR](https://github.com/vittorioromeo/th12_hfr) also
    requires Steam versions to be launched through Steam and checks expected instructions.
-2. **Load early enough.** [PipeLink](https://github.com/Sm1jjj/PipeLinkLauncher) found `dinput8.dll` loaded too late for GTA SA's mod loader and its own
+2. **Load early enough.** PipeLink found `dinput8.dll` loaded too late for GTA SA's mod loader and its own
    plugin; it installed the same loader payload under the name of a DLL imported at startup, keeping the
    original under a new name.
 3. **Pin and verify downloads.** [SkateGM](https://github.com/the-schwilliam/SkateGM)'s fetch script pins SDL2 2.32.10 and a mapping-database commit and
@@ -45,10 +45,10 @@ game, and when a mod "doesn't load" for some users.
 
 ## Gotchas
 1. **Name checks pass on the wrong build.** **Cause:** the installer checks only file or process names
-   ([ReSkate Trainer](https://github.com/andrewnakas/reskate-trainer)'s BAT installers). **Fix:** hash or fingerprint the target.
-2. **Half an install.** **Cause:** copies are not transactional (BullySkate, ReSkate, SkateGM all copy in
+   (e.g. a batch-file installer). **Fix:** hash or fingerprint the target.
+2. **Half an install.** **Cause:** copies are not transactional (BullySkate and SkateGM both copy in
    steps). **Fix:** stage to a temp folder, verify, then swap; detect a partial previous run on start.
-3. **A backup marker that lies.** ReSkate uses the backup DLL as the only "backup complete" marker, and copies
+3. **A backup marker that lies.** One installer uses the backup DLL as the only "backup complete" marker, and copies
    DLL and launcher in separate steps. **Fix:** write the marker last, after verifying every file.
 4. **Version parsing.** BullySkate's loader check compares decimal versions, so 15.10 would read as 15.1.
    **Fix:** compare version components as integers.

@@ -34,8 +34,8 @@ links: []
 Only the last row supports `status: working` from your own work, and only for the scenarios actually played.
 
 ### Things that look like proof and aren't
-- **A design document.** [Garry's Redemption](https://github.com/codeByAlexff/garrys-redemption)'s first commit plans in-frame Vulkan/DX12 compositing; its later
-  release ships a separate overlay window and calls in-frame drawing unbuilt.
+- **A design document.** [Garry's Redemption](https://github.com/codeByAlexff/garrys-redemption)'s `docs/DESIGN.md` plans in-frame Vulkan/DX12
+  compositing; v0.1.0-beta ships a separate overlay window, and its README calls in-frame drawing "not built".
 - **A passing test that checks little.** The GTA V example's `ws_test.cpp` passes if any received string
   contains `explosion`. One project's changelog records a save-verification task that once passed with no game data
   present. A conditional asset test can skip the meaningful check when owned files are missing.
@@ -57,10 +57,10 @@ Only the last row supports `status: working` from your own work, and only for th
   cheating; the code writes TCP under a lock and the roadmap lists command-rate checks as pending.
 - **A clip of one mode.** [Halo / MW2 Director](https://github.com/0xburn/halo-mw2-director) has an authored cinematic, an imported map that MW2's
   rules run, and a bot match. Footage of one says nothing about the others, so name the mode a clip shows.
-- **A source repo's "no assets" wording.** [CS:Craft](https://github.com/FrosttysBots/CS-Craft)'s source copies no assets, but its Windows release
-  bundles a Minecraft client JAR and assets (its release README says so). [WiiCompiled](https://github.com/patchzyy/Wiicompiled)'s runtime assets
-  list emulator-derived DSP coefficients despite broad "no Nintendo data" wording. Check the release package
-  as well as the repo.
+- **A source repo's "no assets" wording.** CS:Craft's source copies no assets, but its Windows release
+  bundles a Minecraft client JAR and assets (its release README says so). Check the release package as well as
+  the repo. [WiiCompiled](https://github.com/patchzyy/Wiicompiled)'s THIRD-PARTY-NOTICES is a good model: it lists every
+  bundled runtime file and where it came from.
 - **A negative result without its scope.** Host depth that's flat in the main menu says nothing about depth
   during gameplay. Record where a negative result was taken.
 - **An edited video.** Cuts hide stale frames, sampled frames miss short events, and automatic captions

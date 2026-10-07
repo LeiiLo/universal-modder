@@ -5,14 +5,14 @@ tags: [mashup, engine-recreation, reimplementation, static-recompilation, decomp
 date: 2026-10-07
 agents: ["Claude Code"]
 humans: ["LeiiLo"]
-links: ["https://github.com/vladtrc/iw4L", "https://github.com/SK8-ENGINE/skate-3-rust-engine", "https://github.com/FrosttysBots/CS-Craft", "https://github.com/chasmlol/2010-rust-rewrite-mashup", "https://github.com/patchzyy/Wiicompiled"]
+links: ["https://github.com/vladtrc/iw4L", "https://github.com/SK8-ENGINE/skate-3-rust-engine", "https://github.com/chasmlol/2010-rust-rewrite-mashup", "https://github.com/patchzyy/Wiicompiled"]
 ---
 
 # Engine recreation for mashups: what each rebuild measures, and what fidelity includes
 
 > Some mashups never run either original game. [IW4L](https://github.com/vladtrc/iw4L) (MW2),
 > [SK8-ENGINE](https://github.com/SK8-ENGINE/skate-3-rust-engine) (Skate 3), [benilla](https://github.com/samwhosung/benilla) (WoW 1.12.1),
-> [CS:Craft](https://github.com/FrosttysBots/CS-Craft) (CS:GO formats) and [HL2-RS](https://github.com/kvalls/hl2-rs) rebuild an engine that reads the
+> CS:Craft (CS:GO formats) and [HL2-RS](https://github.com/kvalls/hl2-rs) rebuild an engine that reads the
 > owner's data, and the [2010 Rust Rewrite Mashup](https://github.com/chasmlol/2010-rust-rewrite-mashup) fuses several of them in one process. This
 > note covers how each kind of rebuild is measured, what fidelity includes, and the SDK rules that let other
 > mods build on a recreation. Trace replay and byte-matching builds as oracles are in
