@@ -39,7 +39,7 @@ transplanted subsystem behind a C API, or a worker process. See `choosing-a-mash
 | [LibertyCraft](https://github.com/mrborghini/libertycraft) | Minecraft | GTA takes over for missions, cutscenes, minigames and cars; the guest follows a non-physical mount at the seat and re-syncs by a teleport handshake |
 | Minecraft × GTA V example | GTA on foot; Minecraft in elytra flight | GTA supplies look and chase camera during flight |
 | [Minecraft × Half-Life](https://github.com/SawyerTheNerd/Minecraft-X-HalfLife) (GoldSrc) | Minecraft | ladders, `use`, noclip and death return movement to Half-Life |
-| [Garry's Redemption](https://github.com/codeByAlexff/garrys-redemption) (initial design doc) | hidden Garry's Mod | native actors mirrored as invisible proxies; the guest drives grabbed/struck proxies, ownership returns after release and settling |
+| [Garry's Redemption](https://github.com/codeByAlexff/garrys-redemption) (design doc) | hidden Garry's Mod | native actors mirrored as invisible proxies; the guest drives grabbed/struck proxies, ownership returns after release and settling |
 
 ### Unit mappings
 | Project | Mapping |
