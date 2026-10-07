@@ -48,7 +48,7 @@ Only the last row supports `status: working` from your own work, and only for th
 - **A "golden" sweep that can't fail.** The [benilla](https://github.com/samwhosung/benilla) / [World of Skatecraft](https://github.com/Kimmo3223/world-of-skatecraft) history records correcting tests
   whose names promised more than they checked, and screenshot sweeps that were reporting success without checking; it later made
   a skipped addon test fail instead of pass.
-- **A count of checks.** The [Diablo II movement](https://github.com/ITSTDMCC/DevilutionX-D2-Movement) mod reports 65/65 checks, but they measure different things
+- **A count of checks.** The Diablo II movement mod reports 65/65 checks, but they measure different things
   (table agreement, travel time, level hashes, best-of-N frame rate), and owned-file checks skip when files
   are missing.
 - **Changed rules, same leaderboard.** [Touhou HFR](https://github.com/vittorioromeo/th12_hfr)'s smaller simulation steps can change hits and scores, so
@@ -76,8 +76,8 @@ Only the last row supports `status: working` from your own work, and only for th
   commits co-authored with an AI model; they don't describe the later Fallout-specific changes.
 - AI credit attaches to the work its author credits. Explicit model credits exist for several projects
   ([NewVegasCraft](https://github.com/Davozh/new-vegascraft)'s pages, the Half-Life bridge, Garry's Redemption releases); historical foundations such as
-  older decompilation projects and [DevilutionX](https://github.com/diasurgical/DevilutionX) are human-led. Absence of credit is not proof either way.
-- A project in a recent video isn't necessarily AI-made. [libsm64](https://github.com/libsm64/libsm64) had Garry's Mod hosts calling into it
+  older decompilation projects and DevilutionX are human-led. Absence of credit is not proof either way.
+- A project in a recent video isn't necessarily AI-made. libsm64 had Garry's Mod hosts calling into it
   long before the current wave of AI-made mashups.
 
 ### In a field note

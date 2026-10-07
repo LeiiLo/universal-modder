@@ -13,8 +13,8 @@ links: ["https://github.com/chasmlol/2010-rust-rewrite-mashup", "https://github.
 > Many "Game B inside Game A" projects never run Game B's executable. They rebuild Game B's engine, or one
 > of its mechanics, and plug it into the real host: the Skate 3 engine in Bully, Garry's Mod, a
 > recreated WoW client and older 32-bit hosts; Mirror's Edge movement in Skyrim and Minecraft; Mario 64's
-> movement in Elden Ring; [Diablo II movement](https://github.com/ITSTDMCC/DevilutionX-D2-Movement) in
-> [DevilutionX](https://github.com/diasurgical/DevilutionX). This note compares where the rebuilt part runs and how each project checked it.
+> movement in Elden Ring; Diablo II movement in
+> DevilutionX. This note compares where the rebuilt part runs and how each project checked it.
 
 ## When to use it
 The guest's gameplay is a mechanic set the host lacks (skating, parkour, movement), a rebuilt engine
@@ -26,7 +26,7 @@ Compare `choosing-a-mashup-route.md` and the mashup skill's patterns 3–5.
 ### Choose where the rebuilt part runs
 | Placement | Example | Consequence |
 |---|---|---|
-| **In-process DLL behind a C API** | [ER Mario](https://github.com/deltarooo/er-mario) compiles the C library [libsm64](https://github.com/libsm64/libsm64) into a Rust DLL that Elden Ring loads through me3 | lowest latency, but must match the host's bitness and address budget; a guest fault is a host fault, so the guest must recover itself |
+| **In-process DLL behind a C API** | ER Mario compiles the C library libsm64 into a Rust DLL that Elden Ring loads through me3 | lowest latency, but must match the host's bitness and address budget; a guest fault is a host fault, so the guest must recover itself |
 | **Worker processes** | [BullySkate](https://github.com/Faiqie/BullySkate): x86 Bully adapter + x64 Skate physics worker + separate sound worker | the guest can be 64-bit beside a 32-bit host and keep big state off the host's threads; needs a transport contract and lifetime binding |
 | **Inside a host scripting runtime** | [SkateGM](https://github.com/the-schwilliam/SkateGM): the rebuilt Skate engine in Garry's Mod through a native module and Lua | the host's scripting decides what's easy; moving props need their own collision layer |
 | **Inside a recreated host** | [World of Skatecraft](https://github.com/Kimmo3223/world-of-skatecraft): Skate engine added to [benilla](https://github.com/samwhosung/benilla) (recreated WoW 1.12.1 client) through an extension entry point that accepts extra Bevy plugins | no foreign process at all, but you depend on the recreated host's own fidelity |

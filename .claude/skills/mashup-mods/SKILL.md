@@ -111,7 +111,7 @@ Code: `examples/minecraft-gta5-passthrough`. Every lesson: `knowledge/games/gta-
   Guest weapons with host effects did.
 
 ## Pattern 3: embed a decomp as a library
-[libsm64](https://github.com/libsm64/libsm64) turns the Super Mario 64 decomp into a library: feed it collision and input, and it returns Mario's
+libsm64 turns the Super Mario 64 decomp into a library: feed it collision and input, and it returns Mario's
 state and mesh. G64 embeds it in Garry's Mod; the host feeds its collision into the guest sim. Any
 decomp/recomp (see `skills/mod-any-game/references/engines/retro-decomp.md`) can be wrapped this way. The
 user supplies their own ROM for assets.

@@ -28,7 +28,7 @@ you need to judge another project's "100%" or "parity" claim.
 ### Name the kind of rebuild and its measure
 | Kind | Produces | Measured by |
 |---|---|---|
-| **Matching decompilation** ([mkdd](https://github.com/doldecomp/mkdd)) | source that compiles back to the original bytes | per-function byte match with the original compiler and flags |
+| **Matching decompilation** (mkdd) | source that compiles back to the original bytes | per-function byte match with the original compiler and flags |
 | **Static recompilation** ([WiiCompiled](https://github.com/patchzyy/Wiicompiled)) | the original machine code translated ahead of time, plus a platform runtime | instruction coverage, and behaviour parity on real inputs |
 | **Engine recreation** (IW4L, SK8-ENGINE) | a new engine that reads the original data and reimplements its rules | trace comparisons against the original, system by system |
 | **Emulation** | the original binary on an emulated machine | timing and device accuracy |
