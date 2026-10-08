@@ -34,7 +34,7 @@ links: []
 Only the last row supports `status: working` from your own work, and only for the scenarios actually played.
 
 ### Things that look like proof and aren't
-- **A design document.** [Garry's Redemption](https://github.com/codeByAlexff/garrys-redemption)'s `docs/DESIGN.md` plans in-frame Vulkan/DX12
+- **A design document.** [Garry's Redemption](https://github.com/codeByAlexff/garrys-redemption)'s `CLAUDE.md` brief plans in-frame Vulkan/DX12
   compositing; v0.1.0-beta ships a separate overlay window, and its README calls in-frame drawing "not built".
 - **A passing test that checks little.** The GTA V example's `ws_test.cpp` passes if any received string
   contains `explosion`. One project's changelog records a save-verification task that once passed with no game data
